@@ -1,0 +1,32 @@
+.question{
+	color: #C40062;
+	text-align: center;
+}
+
+.row{
+	margin-bottom: 10px;
+	align-items: center; /*pour que les réponses soient centrés verticalement par rapport à l'image*/
+}
+
+#BoutonClose{
+	height: 40px;
+	width: 100px;
+}
+
+img{
+	float: left;
+	margin-left: 10px;
+}
+
+#Bouton1,
+#Bouton2,
+#Bouton3,
+#Bouton4{
+	width: 300px;
+	height: 80px;
+}
+/*j'ai changé ce CSS pour que ça ne s'applique qu'aux boutons de réponses et non tous les boutons*/
+
+h4{
+	text-align: center;
+}
