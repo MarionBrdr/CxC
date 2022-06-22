@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/img/qcm.png">
+    <title>CxC - Vers les QCM</title>
+    <!--POLICE-->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');</style>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');</style>
+    <!--CSS-->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+</head>
+	
+<body>
+    <header class="container-fluid">
+        <nav class="container navbar navbar-expand-lg navbar-light bg-white border-bottom"> <!--fixed-top-->
+            <div class="container px-2 py-1">
+                <a class="navbar-brand" id="titre" href="index.html">
+                    <img src="/img/qcm.png" alt="" height="90" id="logonavbar">
+                    Chartres par C(h)œur
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav" id="navbarauto">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="txtcustom" aria-current="page" href="index.html">Accueil</a>
+                        </li>
+                    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="qcm.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Quiz
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="QCMFormChrono.html">Chronologique</a></li>
+                                <li><a class="dropdown-item" href="QCMFormThema.html">Thématique</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="jeux.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jeux
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="memory.html">Memory</a></li>
+                                <li><a class="dropdown-item" href="hotspot.html">Hotspot</a></li>
+                                <li><a class="dropdown-item" href="wordle.html">Wordle</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Développements numériques
+                            </a>
+                            <ul class="dropdown-menu container" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="livrables.html">Présentation</a></li>
+                                <li><a class="dropdown-item" href="film.html">Film</a></li>
+                                <li><a class="dropdown-item" href="maquette.html">Maquette</a></li>
+                                <li><a class="dropdown-item" href="vues.html">Vues</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>	
+	<section>
+		<div class="container px-3 py-5">
+			<h2 class="pb-2 border-bottom">Aidez-nous à améliorer le site !</h2>
+				<p>Avant d'accéder au quiz, nous avons besoin de vous connaître un peu mieux, afin d'améliorer l'aspect pédagogique de notre site. Nous cherchons à savoir à quelle(s) question(s) vous pourriez mal répondre, et à l'avenir, éclaircir ces points !</p>
+				<div class="row">
+					<form action="" method="post" class="col-md-7 col-lg-5" class="needs-validation" novalidate>
+						<label for="inputState" class="form-label">Qui êtes vous ?</label>
+						<select id="inputStateProfil" class="form-select" class="required">
+							<option>Étudiant</option>
+							<option>Enfant</option>
+							<option>Touriste</option>
+							<option>Connaisseur</option>
+							<option>Spécialiste</option>
+						</select>
+					</form>
+					<form action="" method="post" class="col-md-7 col-lg-5" class="needs-validation" novalidate>
+						<label for="inputState" class="form-label">Avez vous déjà visité la cathédrale de Chartres ?</label>
+						<select id="inputStateVisite" class="form-select" class="required">
+							<option>Oui</option>
+							<option>Non</option>
+						</select>
+					</form>
+
+				<div class="col-12 py-3">
+					<button type="submit" data-bs-toggle="modal" class="btn btn-custom text-white" data-bs-target="#exampleModal" id="submit">Envoyer</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="Label" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Merci beaucoup pour votre aide !</h5>
+					</div>				
+					<div class="modal-body" id="modalBody">
+						<p>Vos informations ont bien été enregistrées. Bonne visite !</p>
+					</div>
+					<div class="modal-footer">
+						<a class="btn btn-custom text-white" id="next" href="QCMChrono.php" role="button">C'est parti !</a>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		<footer>
+		  <div class="container py-3 my-4">
+			  <ul class="nav justify-content-center border-top pb-3 mb-3">
+				  <li class="nav-item"><a href="mentions.html" class="nav-link px-2 text-muted">Mentions légales</a></li>
+				  <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">Équipe</a></li>
+			  </ul>
+		  </div>
+		</footer>		
+	</section>
+	
+	<script>
+		var submit = document.getElementById("submit");		
+		var modal = document.getElementById("modalBody");
+		var next = document.getElementById("next");
+		var currentID = 0;
+		
+		function requestDB () {
+			var select = document.getElementById('inputStateVisite'); 
+			var valeurVisite = select.options[select.selectedIndex].value; // Lit le champ séléctionné dans le menu déroulant du formulaire.
+
+			var select = document.getElementById('inputStateProfil');
+			var valeurProfil = select.options[select.selectedIndex].value;
+			
+			function reqListener () {
+				currentID = this.responseText; // Stocke la réponse renvoyée par le script dbCxC.php
+				if (currentID == 1) {
+					modal.innerHTML = "Merci pour votre participation ! Vous êtes le " + currentID + "er visiteur à avoir répondu.";
+				}
+				else {
+				modal.innerHTML = "Merci pour votre participation ! Vous êtes le " + currentID + "ème visiteur à avoir répondu.";	
+				}
+			}	
+			
+			var oReq = new XMLHttpRequest(); // Création d'un requête Http
+			oReq.onload = reqListener; //lors de la réponse : exécuter fonction reqListener
+			oReq.open("get", "php/dbCxC.php?valeurVisite="+valeurVisite+"&valeurProfil="+valeurProfil+"&qcm=C&timestamp="+Date.now());
+			// Requête Http vers le script php stockant les informations des formulaires, avec comme paramètre les séléctions faites par l'utilisateur et une date.
+			//Problème (supposément) avec le cache, qui empêchait la création d'une nouvelle ligne dans la base de données, reglé en distinguant chaque requête avec leur date précise.
+			oReq.send();
+		}
+		
+		function nextPage () {
+			next.href="QCMChrono.php?ID="+currentID; // Modifie le lien de la page suivante en transmettant l'ID venant d'être créé, pour plus tard enregistrer les réponses au bon endroit.
+		}
+		
+		submit.onclick=requestDB; // Lors de l'envoi des réponses au formulaire : faire la requête.
+		next.onclick=nextPage; // Une fois le bouton du modal enclenché, la page suivante est affichée.
+	</script>
+	
+</body>
+</html>

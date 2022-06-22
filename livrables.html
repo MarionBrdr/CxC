@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/img/livrables.png">
+    <title>CxC - Développements numériques</title>
+    <!--POLICE-->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');</style>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');</style>
+    <!--CSS et JS-->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <header class="container-fluid">
+    <nav class="container navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <div class="container px-2 py-1">
+            <a class="navbar-brand" id="titre" href="index.html">
+                <img src="/img/livrables.png" alt="" height="90" id="logonavbar">
+                Chartres par C(h)œur
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav" id="navbarauto">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="txtcustom" aria-current="page" href="index.html">Accueil</a>
+                    </li>
+                
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Quiz
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="QCMFormChrono.html">Chronologique</a></li>
+                            <li><a class="dropdown-item" href="QCMFormThema.html">Thématique</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Jeux
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="memory.html">Memory</a></li>
+                            <li><a class="dropdown-item" href="hotspot.html">Hotspot</a></li>
+                            <li><a class="dropdown-item" href="wordle.html">Wordle</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Développements numériques
+                        </a>
+                        <ul class="dropdown-menu container" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="livrables.html">Présentation</a></li>
+                            <li><a class="dropdown-item" href="film.html">Film</a></li>
+                            <li><a class="dropdown-item" href="maquette.html">Maquette</a></li>
+                            <li><a class="dropdown-item" href="vues.html">Vues</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+  
+    
+    <section> <!--La section est divisée en deux parties. La première contient une présentation du projet ChArtRes avec un titre et une zone de texte. Et la deuxième contient les trois liens vers les trois livrables, accompagnés chacun d'un court texte les présentant.-->
+      <div class="container px-3 py-5"><!--Partie contenant la présentation du projet ChArtRes.-->
+        <div>
+          <h2 id="txtcustom">Présentation</h2>
+          <p>ChArtRes (2019-2023) est un projet de recherche qui vise, à partir d’archives et grâce aux moyens qu’offre le numérique, à reconstituer les 
+            différentes phases de construction du Tour de chœur du début de la Renaissance au début du XVIIIe siècle pour comprendre son histoire et avoir 
+            une idée de son aspect d’origine. Il s’inscrit dans la continuité de plusieurs projets en humanités numériques financés par la région Centre-Val 
+            de Loire : ARVIVA (2012-2015), SCULPTURE 3D (2014-2018) et VITRAIL (2019-2021) <br><br>
+            ChArtRes (Chœur d’Art et Restitution 3D) est financé par la Région Centre-Val de Loire (APR IR 2019) et porté par le Centre d’études 
+            supérieures de la Renaissance à Tours (UMR 7323) en collaboration étroite avec ILIAD3 et en partenariat avec la DRAC Centre-Val de Loire, 
+            l’association Les Amis de la Cathédrale de Chartres et l’Architecte en chef des Monuments Historiques-Agence de Ponthaud. Il réunit depuis 
+            janvier 2019 une équipe interdisciplinaire (historiens de l’art, doctorants et informaticiens) sous la direction de Marion Boudon-Machuel, 
+            professeure en histoire de l’art moderne à l’université de Tours. <br><br>
+            Les interventions de Victor Louis à la fin du XVIIIème siècle ont profondément modifié la structure de la Renaissance : l’intérieur du chœur 
+            a été revêtu de stuc et de marbre sur la totalité des piliers et des arcatures, rendant invisible la face interne de la clôture d’origine. 
+            La modélisation 3D du tour de chœur, en cours de réalisation au sein du projet ChArtRes, vise à le restituer dans son état Renaissance. Elle 
+            est accompagnée d’un film et d’interfaces numériques à 360° qui, selon le principe de la réalité augmentée, permettent d’avoir un accès immédiat 
+            à des contenus immersifs en haute résolution (textes, images, vidéo) afin de découvrir, comme dans une exposition interactive, l’histoire, 
+            l’iconographie, les sources visuelles, le style, et des détails matériels du décor sculpté. Enfin, tant l’ornement que les groupes sculptés font 
+            l’objet d’une valorisation sur les bases de données du CESR, ARVIVA et ROSER.
+          </p>
+        </div>
+      </div>
+
+      <div class="container px-3 py-5"> <!--Partie contenant les liens vers les pages des livrables.-->
+        <h2 class="pb-2 border-bottom" id="txtcustom">Pour en savoir plus</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+          <div>
+            <h2 id="txtcustom">Film</h2>
+            <p>Un film pour comprendre les évolutions significatives de la structure, de la sculpture, et du mobilier liturgique du chœur de la cathédrale Notre-Dame.</p> <!--Présentation du livrable.-->
+            <a href="film.html" class="btn btn-custom text-white"> <!--Liens vers le livrable.-->
+              Cliquez ici
+            </a>
+          </div>
+          <div>
+            <h2 id="txtcustom">Maquette</h2>
+            <p>Une maquette 3D interactive qui intègre les différentes phases de construction du tour de chœur du début de la Renaissance au début du XVIIIème siècle.</p>
+            <a href="maquette.html" class="btn btn-custom text-white">
+              Cliquez ici
+            </a>
+          </div>
+          <div>
+            <h2 id="txtcustom">Vues immersives</h2>
+            <p>Des vues immersives à 360° pour proposer une visite virtuelle annotée du monument et découvrir tous les secrets.</p>
+            <a href="vues.html" class="btn btn-custom text-white">
+              Cliquez ici
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container py-3 my-4">
+          <ul class="nav justify-content-center border-top pb-3 mb-3">
+              <li class="nav-item"><a href="mentions.html" class="nav-link px-2 text-muted">Mentions légales</a></li>
+              <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">Équipe</a></li>
+          </ul>
+      </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/img/minijeux.png">
+    <title>CxC - Wordle</title>
+	<!--POLICE-->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');</style>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');</style>
+    <!--CSS et JS-->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/wordle.css"/>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header class="container-fluid">
+        <nav class="container navbar navbar-expand-lg navbar-light bg-white border-bottom"> <!--fixed-top-->
+            <div class="container px-2 py-1">
+                <a class="navbar-brand" id="titre" href="index.html">
+                    <img src="/img/minijeux.png" alt="" height="90" id="logonavbar">
+                    Chartres par C(h)œur
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav" id="navbarauto"> <!--me-auto mb-2 mb-lg-0-->
+                        <li class="nav-item">
+                            <a class="nav-link active" id="txtcustom" aria-current="page" href="index.html">Accueil</a>
+                        </li>
+                    
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Quiz
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="chrono.html">Chronologique</a></li>
+                                <li><a class="dropdown-item" href="theme.html">Thématique</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jeux
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="memory.html">Memory</a></li>
+                                <li><a class="dropdown-item" href="hotspot.html">Hotspot</a></li>
+                                <li><a class="dropdown-item" href="wordle.html">Wordle</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Développements numériques
+                            </a>
+                            <ul class="dropdown-menu container" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="livrables.html">Présentation</a></li>
+                                <li><a class="dropdown-item" href="film.html">Film</a></li>
+                                <li><a class="dropdown-item" href="maquette.html">Maquette</a></li>
+                                <li><a class="dropdown-item" href="vues.html">Vues</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+		<div class="container"> <!-- création d'un container qui abrite le jeu -->
+		<div id="infos" class="alert alert-dark opacity-75 mt-2 pb-1"> <!-- div explicative du jeu qui peut disparaître avec le bouton 'Close' grâce à Bootstrap --->
+                <p>ℹ️ <strong>Comment jouer ?</strong> C'est tout simple ! Essaie de trouver des mots en rapport avec la clôture de choeur de la cathédrale ! Si la lettre est verte, elle est au bon endroit. Si elle est jaune, elle se trouve dans le mot mais n'est pas à la bonne place. Si elle est grise, elle ne figure pas dans le mot.</p>
+                <button type="button" class="btn-close small position-absolute top-0 end-0 pt-3 pe-2" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div> 
+	
+        <button id="rejouer" class="btn btn-custom text-white mt-2">Rejouer</button> <!-- bouton permettant de relancer le jeu -->
+        
+        <br>
+
+        <div id="board"> <!-- Div donnant l'emplacement des cases de jeu -->
+        </div>
+
+        <br>
+        <h3 id="answer"></h3> <!-- div donnant l'emplacement de la réponse -->
+
+        <br>
+        <div id="keyboard"></div> <!-- div donnant l'emplacement du clavier virtuel -->
+		
+		</div>
+	</section>
+
+    <footer>
+      <div class="container py-3 my-4">
+          <ul class="nav justify-content-center border-top pb-3 mb-3">
+              <li class="nav-item"><a href="mentions.html" class="nav-link px-2 text-muted">Mentions légales</a></li>
+              <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">Équipe</a></li>
+          </ul>
+      </div>
+  </footer>
+<script src="js/wordle.js"></script>
+</body>
+</html>

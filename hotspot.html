@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/img/minijeux.png">
+    <title>CxC - Hotspot</title>
+    <!--POLICE-->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');</style>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');</style>
+    <!--CSS et JS-->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/imageMapResizer.min.js"></script>
+    <!-- Le CSS propre à ce mini-jeu est directement intégrer dans le HTMl par l'attibut @style car sa présence est restreinte -->
+</head>
+<body onload="zoneAlerte();">
+<header class="container-fluid">
+    <nav class="container navbar navbar-expand-lg navbar-light bg-white border-bottom"> <!--fixed-top-->
+        <div class="container px-2 py-1">
+            <a class="navbar-brand" id="titre" href="index.html">
+                <img src="/img/minijeux.png" alt="" height="90" id="logonavbar">
+                Chartres par C(h)œur
+            </a>
+            <button class="navbar-toggler mt-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav" id="navbarauto"> <!--me-auto mb-2 mb-lg-0-->
+                    <li class="nav-item">
+                        <a class="nav-link active" id="txtcustom" aria-current="page" href="index.html">Accueil</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Quiz
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="QCMFormChrono.html">Chronologique</a></li>
+                            <li><a class="dropdown-item" href="QCMFormThema.html">Thématique</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Jeux
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="memory.html">Memory</a></li>
+                            <li><a class="dropdown-item" href="hotspot.html">Hotspot</a></li>
+                            <li><a class="dropdown-item" href="wordle.html">Wordle</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Développements numériques
+                        </a>
+                        <ul class="dropdown-menu container" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="livrables.html">Présentation</a></li>
+                            <li><a class="dropdown-item" href="film.html">Film</a></li>
+                            <li><a class="dropdown-item" href="maquette.html">Maquette</a></li>
+                            <li><a class="dropdown-item" href="vues.html">Vues</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<section>
+    <div class="container d-block align-content-center"> <!-- création d'un container qui abrite le jeu --->
+        <div id="infos" class="alert alert-dark opacity-75 mt-2 pb-1"> <!-- div explicative du jeu qui peut disparaître avec le bouton 'Close' grâce à Bootstrap --->
+            <p><strong>ℹ️ Comment jouer ?</strong> Clique sur la zone correspondante à la question pour dévoiler son histoire.</p>
+            <button type="button" class="btn-close small position-absolute top-0 end-0 pt-3 pe-2" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div id="image1" style="visibility: visible"> <!-- première image du jeu, visible pour l'instant --->
+            <div class="mt-2"> <!-- div contenant l'indice entier, composé du bouton cliquable et du <p> contenant l'indice --->
+                <div id="i1"> <!-- indice aidant l'utilisateur, utilisation de la fonction 'Collapse' de Bootstrap pour afficher/cacher le contenu du <p> lors du clic sur le bouton --->
+                    <button class="btn btn-custom text-white" data-bs-toggle="collapse" data-bs-target="#indice1" aria-expanded="false" aria-controls="indice1">
+                        🗝 <strong>Indice</strong>
+                    </button>
+                </div>
+                <div id="indice1" class="collapse fst-italic">
+                    <p>La scène représentée ici est l'Ascencion.</p>
+                </div>
+            </div>
+            <p id="question1" class="fst-italic text-center mt-3"><strong>Sauras-tu retrouver Jésus sur cette image ?</strong></p>
+            <div id="alerte1" class="alert alert-success alert-dismissible w-75 position-absolute top-50 start-50 translate-middle-x" style="visibility: hidden"> <!-- alerte qui se déclenche lors du clic sur la zone recherchée, contenant l'explication de l'image, la visibilité est cachée et devient visible lors du même clic-->
+                <strong>Bravo ! </strong>
+                <hr/>L’Ascension marque la dernière rencontre de Jésus avec ses disciples après sa Résurrection et son élévation au ciel. Le Christ s'élève dans le ciel sous le regard des disciples et disparaît rapidement dans les nuées. <!-- Explication en partie tirée de la POP : https://www.pop.culture.gouv.fr/notice/palissy/IM28000447-->
+                <hr/>
+                <button id="next" class="btn btn-outline-dark" data-bs-dismiss="alert" aria-label="Close">Suivant</button>
+            </div>
+            <img id="ascencion" src="img/hotspot1.jpg" class="d-block mx-auto img-fluid" usemap="#hotspot1" alt="ascension"/>
+            <map name="hotspot1"> <!-- zone cliquable de l'image, en lien avec la balise <area>  -->
+                <area id="Jesus" alt="Jesus" shape="rect" coords="234,95,349,233"> <!-- zone cliquable de l'image, en lien avec la balise <map>, elle contient les coordonnées et la forme de la zone (ici un carré/rectangle)  -->
+            </map>
+        </div>
+        <div id="image2" style="display: none"> <!-- div contenant la deuxième image, les éléments sont les mêmes que pour la première si ce n'est le display (affichage) qui est caché pour le moment -->
+            <div class="mt-2">
+                <div id="i2">
+                    <button class="btn btn-custom text-white" data-bs-toggle="collapse" data-bs-target="#indice2" aria-expanded="false" aria-controls="indice2"> <!-- L'id est similaire au premier indice afin de pouvoir utiliser la customisation du bouton créé à partir de bootstrap -->
+                        🗝 <strong>Indice</strong>
+                    </button>
+                </div>
+                <div id="indice2" class="collapse fst-italic">
+                    <p>La scène représentée ici est l'Épiphanie.</p>
+                </div>
+            </div>
+            <div>
+                <p id="question2" class="fst-italic text-center mt-3"><strong>Sauras-tu retrouver Jésus sur cette image ?</strong></p>
+                <div id="alerte2" class="alert alert-success alert-dismissible w-75 position-absolute top-50 start-50 translate-middle-x" style="visibility: hidden">
+                    <strong>Bravo ! </strong>
+                    <hr/>Marie présente l’enfant Jésus aux mages. Ils sont somptueusement habillés et apportent des cadeaux tels que l’or, la myrrhe et l’encens. Un d'eux a mis un genou à terre en signe de soumission. <!-- Explication inspirée de l'explication fournie par Les Amis de la Cathédrale : http://amiscathedrale.com/page-11-t-de-c-work-in-progress.html -->
+                    <hr/>
+                    <button id="next2" class="btn btn-outline-dark" data-bs-dismiss="alert" aria-label="Close">Suivant</button>
+                </div>
+                <img id="epiphanie" src="img/hotspot2.jpg" usemap="#hotspot2" alt="epiphanie" class="d-block mx-auto img-fluid"/>
+                <map name="hotspot2">
+                    <area id="bebeJesus" alt="bebeJesus" shape="rect" coords="335,232,520,364">
+                </map>
+            </div>
+        </div>
+        <div id="fin" style="display: none" class="alert alert-success alert-dismissible w-100 top-50 start-50 translate-middle-x"> <!-- div acceuillant le message de fin, caché lui aussi en display:none, il s'affichera en fin de partie  -->
+            <p><strong>Félicitations !</strong></p>
+            <hr/>
+            <p>Tu as fini tous les niveaux...
+                <br>De nouveaux apparaîtront bientôt !
+            </p>
+        </div>
+        <!-- J'ai fait le choix d'integrer directement le Javascript dans mon HTML car il contient peu d'éléments -->
+        <script>
+            /*------fonctions pour l'affichage de l'alerte------*/
+            function zoneAlerte(){
+                const zone1 = document.getElementById("Jesus"); /*association de la zone cliquable avec une variable*/
+                zone1.onclick = showAlert; /*création de l'événement lors du clic (.onclick) de la zone prédéfinie et association avec la fonction d'affichage*/
+                const zone2 = document.getElementById("bebeJesus");
+                zone2.onclick = showAlert;
+            }
+            function showAlert(){
+                if (document.getElementById("image1").style.visibility === 'visible'){ /*affichage de l'alerte si l'image associée est visible sur la page*/
+                    document.querySelector("#alerte1").classList.add("visible");
+                }
+                if (document.getElementById("image2").style.visibility === 'visible'){
+                    document.querySelector("#alerte2").classList.add("visible");
+                }
+            }
+            /*------fonctions pour le changement d'image (possibilité d'amélioration pour lier les 2 fonctions)------*/
+            function imageSuivante1to2(){ /*fonction de changement de l'image 1 à la 2*/
+                /*pour l'affichage des alertes*/
+                document.getElementById("image1").style.visibility = 'hidden';
+                document.getElementById("image2").style.visibility = 'visible';
+                /*pour la superposition des div en display*/
+                document.getElementById("image2").style.display = 'block';
+                document.getElementById("image1").style.display = 'none';
+                imageMapResize();
+            }
+            function imageSuivante2to(){ /*fonction de changement de l'image 2 à la fin*/
+                document.getElementById("image2").style.display = 'none';
+                document.getElementById("fin").style.display = 'block';
+            }
+            /*création des événements de clic pour le changement d'affichage des images et de la fin*/
+            document.querySelector("#next").addEventListener("click", imageSuivante1to2);
+            document.querySelector("#next2").addEventListener("click", imageSuivante2to);
+
+            /*------plug in permettant la mise en échelle de <map> pour le clic trouvé sur GitHub (https://github.com/davidjbradshaw/image-map-resizer)------*/
+			imageMapResize();
+        </script>
+    </div>
+</section>
+<footer>
+    <div class="container py-3 my-4">
+        <ul class="nav justify-content-center border-top pb-3 mb-3">
+            <li class="nav-item"><a href="mentions.html" class="nav-link px-2 text-muted">Mentions légales</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">Équipe</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+<!--élements Bootstrap :
+    "fst-italic (écriture en italique)" ;
+    "collapse (effet de déroulement)"
+    "data-bs-dismiss='alert'" = permet le lien avec l'alerte comme élément qui peut disparaître, ce lien se fait grâce à 'alert-dismissible';
+    "aria-label='Close'" = légende du bouton 'fermer'
+    "alert alert-success" = permet la couleur verte et le type de div ;
+    "alert-dismissible" permet de faire disparaître l'alerte ;
+    "position-absolute top-50 (50% du haut) start-50 (50% du bord droit) translate-middle-x (prise en compte de la moitié de la div horizontalement comme point de départ pour le compte de 50% du côté droit)" = permet de gérer la position de l'alerte
+    "img-fluid" = permet que l'image soit 'responsive' sur tout type de serveur
+    "btn btn-outline-secondary"  = type d'élément ;
+    "data-bs-toggle='collapse'" = type de mouvement ;
+    "data-bs-target='#indice1'" = cible du déroulement, ce que ça affiche
+    "aria-expanded='false'" = élément fermé par défaut
+    "aria-controls='indice1'" = indication de la balise gérée par cette action par son id -->
+</html>

@@ -1,0 +1,204 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/img/accueil.png">
+    <title>CxC - Accueil</title>
+    <!--POLICE-->
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');</style>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');</style>
+    <!--CSS et JS-->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <script src="/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <!--Cette partie correspond à l'entête du site. Seule celle de la page index.html est différente, elle est la même sur toutes les autres pages.-->
+    <header class="container-fluid p-3 bg-white text-dark">
+        <div class="container px-3 py-4 d-flex justify-content-center">
+            <div id="img_index">
+				      <a href="index.html">
+                <img src="/img/accueil.png" alt="logo" height="160">
+              </a>
+            </div>
+            <div id="txt_index">
+              <h1>CHARTRES PAR C(H)ŒUR</h1>
+            </div>
+        </div>
+        <!--Cette partie correspond à la barre de navigation.-->
+        <div class="container px-3 py-4">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom border-top" id="menu1"> <!--Le menu de navigation est le même sur toutes les pages.-->
+                <div class="container-fluid">
+                  <!--Cette partie avec la balise "button" correspond au bouton qui va se créer quand la barre de navigation va collaspser.-->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!--Cette partie correspond au menu de la bar de navigation.-->
+                    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                        <ul class="navbar-nav" id="navbarindex">
+                          <!--Chaque balise <li> contenue directement dans la balise <ul> correspond à une partie du menu. Elles peuvent contenir soit une seule balise <a> qui sera donc un seule lien cliquable du menu, soit une balise <a> qui sera la face visible du menu et une autre balise <ul> qui contiendra le menu déroulant qui apparaîtra quand on cliquera sur le premier lien <a>. -->
+                            <li class="nav-item">
+                                <a class="nav-link active" id="txtcustom" aria-current="page" href="index.html">Accueil</a> 
+                            </li>
+
+                            <li class="nav-item dropdown"> 
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Quiz
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink"> 
+                                    <li><a class="dropdown-item" href="QCMFormChrono.html">Chronologique</a></li>
+                                    <li><a class="dropdown-item" href="QCMFormThema.html">Thématique</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Jeux
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="memory.html">Memory</a></li>
+                                    <li><a class="dropdown-item" href="hotspot.html">Hotspot</a></li>
+                                    <li><a class="dropdown-item" href="wordle.html">Wordle</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Développements numériques
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="livrables.html">Présentation</a></li>
+                                    <li><a class="dropdown-item" href="film.html">Film</a></li>
+                                    <li><a class="dropdown-item" href="maquette.html">Maquette</a></li>
+                                    <li><a class="dropdown-item" href="vues.html">Vues</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!--Cette partie correspond au corps du site. Elle change à chaque page.-->
+    <section> <!--La section est divisée en trois parties, la première qui est le texte de présentation, la deuxième qui est le carrousel de photo et le troisième qui est les liens vers les deux jeux que le site propose et vers les livrables.-->
+	<div class="container px-3 py-5 d-flex align-items-start"> 
+    	<div>
+        	<h2 id="txtcustom">Présentation</h2>
+        	<p>Chartres par C(h)œur s’inscrit dans le cadre du projet ChArtRes – Chœur d’Art et Restitution 3D, un projet de recherche qui vise, 
+            à partir d’archives et grâce aux moyens qu’offre le numérique, à reconstituer les différentes phases de construction du Tour de chœur 
+            du début de la Renaissance au début du XVIIIe siècle pour comprendre son histoire et avoir une idée de son aspect d’origine. <br><br>
+            Dirigé par Marion Boudon-Machuel, professeure en histoire de l’art moderne, au Centre d’études supérieures en collaboration avec ILIAD3 
+            et la DRAC Centre-Val de Loire, le projet ChArtRes bénéficie également de partenariats avec le Centre des Monuments Nationaux, l'association 
+            Les Amis de la cathédrale de Chartres et l'Architecte en chef des Monuments Historiques-Agence de Ponthaud. <br><br>
+            Chartres par C(h)œur se présente sous la forme d’un site internet dont le but est de rendre accessible à tous, 
+            de manière ludique et gratuite, des connaissances spécifiques sur le tour de chœur de la cathédrale Notre Dame de Chartres. <br><br>
+            Il met à disposition des QCM, un Memory, un Hotspot et un Wordle qui accès aux différentes productions audio-visuelles du projet ChArtRes : 
+            une maquette 3D, un film et des vues immersives à 360°, pour en découvrir encore plus sur le tour de chœur. <br><br>
+            Ici, on ne se prend pas la tête, on joue avec le c(h)œur !</p>
+    	</div>
+	</div>
+      
+      <!--Cette partie contient le carousel de photos.-->
+      <div class="container pt-3 py-5">
+        <div class="carousel slide" data-bs-ride="carousel"> 
+          <div class="carousel-inner"> <!--Cette partie contient les photos du carrousel.-->
+            <div class="carousel-item active px-5">
+              <img src="/img/fig1.png" class="rounded px-3 mx-auto d-flex img-fluid" alt="fig1">
+            </div>
+            <div class="carousel-item px-5">
+              <img src="/img/fig2.png" class="rounded px-3 mx-auto d-flex img-fluid" alt="fig2">
+            </div>
+            <div class="carousel-item px-5">
+              <img src="/img/fig3.png" class="rounded px-3 mx-auto d-flex img-fluid" alt="fig3">
+            </div>
+            <div class="carousel-item px-5">
+              <img src="/img/fig4.png" class="rounded px-3 mx-auto d-flex img-fluid" alt="fig4">
+            </div>
+          </div>
+          <button class="carousel-control-prev pe-5" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev"> <!--Ce bouton permet de passer les images à reculons.-->
+            <span class="carousel-control-prev-icon btn-custom rounded" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next ps-5" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next"> <!--Ce bouton permet de passer les images à la suite.-->
+            <span class="carousel-control-next-icon btn-custom rounded" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      
+      <!--Cette partie contient les liens vers les jeux et les livrables. Elle est aussi séparée en trois parties, une pour les qcm, une pour les jeux et une pour les livrables.-->
+      <div class="container px-3 py-5">
+          <h2 class="pb-2 border-bottom" id="txtcustom">À vous de choisir</h2>
+          <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="col d-flex align-items-start"> <!--Liens vers la page de choix des quiz.-->
+              <div>
+                <h2 id="txtcustom">Quiz</h2>
+                <p>Connaisseurs ou simplement curieux, venez tester vos connaissances sur le tour de chœur de la cathédrale Notre-Dame de Chartres.</p>
+                <a href="qcm.html" class="btn btn-custom text-white">
+                  C'est parti pour les quiz
+                </a>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start"> <!--Liens vers la page de choix des jeux.-->
+              <div>
+                <h2 id="txtcustom">Jeux</h2>
+                <p>Que vous ayez visité ou non la cathédrale, détendez-vous en découvrant nos trois mini-jeux sur les détails de ce tour de chœur.</p>
+                <a href="jeux.html" class="btn btn-custom text-white">
+                  C'est parti pour les jeux
+                </a>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start"> <!--Liens vers la page de présentation des livrables et vers les liens des livrables.-->
+              <div>
+                <h2 id="txtcustom">Développements Numériques</h2>
+                <p>Besoin de plus d’informations ? Venez découvrir la maquette 3D, le film ou les vues immersives de la clôture de chœur produites par le projet ChArtRes</p>
+                <a href="livrables.html" class="btn btn-custom text-white">
+                  On va voir les voir ?
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!--Cette partie correspond au pied de page du site. Il est le même sur toutes les pages.-->
+    <footer>
+      <div class="container py-3 my-4"> <!--Menu de navigation contenant deux liens.-->
+          <ul class="nav justify-content-center border-top pb-3 mb-3">
+              <li class="nav-item"><a href="mentions.html" class="nav-link px-2 text-muted">Mentions légales</a></li>
+              <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">Équipe</a></li>
+          </ul>
+      </div>
+  </footer>
+
+</body>
+
+<!--Éléments Bootsrap :
+"container-fluid" = le container prend toute la largeur sur l'écran
+"p" = Permet d'ajouter du padding. Il est associé à un chiffre qui a pour unité le rem (1 rem = 10px). Il peut être associé à une 
+deuxième lettre qui va définir si le padding est horizontal (px), vertical (py), à droite (pe) ou à gauche (ps), en haut (pt) ou en bas (pb).
+"text" = Permet de définir la couleur du texte. Il doit être associé à un autre élément comme "dark", "light", "white" ou "custom".
+"bg" = Background. Permet de définir la couleur de fond d'un element. Il doit etre associé aux mêmes éléments que "text".
+"d-flex" = Display-flex. Permet un affichage flexible de l'élément qui va adapter sa taille pour remplir l'espace qui lui est disponible.
+"justify-content-center" = Permet d'aligner les éléments du container en son centre.
+"navbar-expand-lg" = Permet à la barre de navigation d'être responsive et de pouvoir "s'effondrer" sur elle même quand l'écran atteint une certaine taille.
+"border" = Permette de faire apparaître les bordures du container quand il est associé à "top" (haut) ou "bottom" (bas).
+"collapse navbar-collapse" = Permet de regrouper et cacher la barre de navigation quand elle atteint un breakpoint.
+"nav-item" = Signifie que ce qui est compris dans la balise associée est un élément de la barre de navigation.
+"nav-link" = Signifie que l'élément du menu est un lien. Il doit être associé à un "href".
+"nav-item dropdown" = Signifie que les éléments contenus dans la balise font partie d'un menu déroulant.
+ "dropdown-toggle" = Indique que c'est à partir de cet élément que le menu va se dérouler.
+"dropdown-menu" = Les éléments contenus dans la balise forment la partie déroulante du menu
+"align-items-start" = Permet de placer les éléments du container en haut à gauche de celui-ci.
+"row" = Permet d'utiliser la grille de bootstrap. C'est-à-dire qu'on divise notre fenêtre en une grille avec 12 colonnes.
+"row-cols" = Permet de définir le nombre de colonnes que l'élément va occuper.
+"row-cols-lg" = Permet de définir le nombre de colonnes que l'élément va occuper quand la taille de la fenêtre dépasse la grandeur "large". "lg" peut être remplacée par "sm" (small), "md" (medium) ou "xl" (extra large).
+"m" = Margin. Permet d'ajouter une marge. Il peut être associé aux même éléments que "p".
+-->
+
+</html>
